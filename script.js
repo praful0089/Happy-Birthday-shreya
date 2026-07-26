@@ -122,8 +122,9 @@ setInterval(createHeart,500);
 
 startBtn.addEventListener("click",()=>{
 
-welcome.style.display="none";
+welcome.classList.add("hidden");
 
+moodScreen.classList.remove("hidden");
 moodScreen.classList.add("show");
 
 });
@@ -133,7 +134,7 @@ moodScreen.classList.add("show");
 
 happyBtn.addEventListener("click",()=>{
 
-moodScreen.classList.remove("show");
+moodScreen.classList.remove("hidden");
 
 giftScreen.classList.add("show");
 
@@ -144,7 +145,7 @@ giftScreen.classList.add("show");
 
 sadBtn.addEventListener("click",()=>{
 
-moodScreen.classList.remove("show");
+moodScreen.classList.remove("hidden");
 
 teddyScreen.classList.add("show");
 
@@ -155,7 +156,7 @@ teddyScreen.classList.add("show");
 
 continueGift.addEventListener("click",()=>{
 
-teddyScreen.classList.remove("show");
+teddyScreen.classList.remove("hidden");
 
 giftScreen.classList.add("show");
 
@@ -166,7 +167,7 @@ giftScreen.classList.add("show");
 
 giftBox.addEventListener("click",()=>{
 
-giftScreen.classList.remove("show");
+giftScreen.classList.remove("hidden");
 
 cakeScreen.classList.add("show");
 
