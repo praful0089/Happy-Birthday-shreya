@@ -542,3 +542,6 @@ opacity:0;
     z-index:1200;
     animation:fadeUp 1s ease;
 }
+<button onclick="location.reload()">
+    🔄 Replay the Surprise
+</button>
