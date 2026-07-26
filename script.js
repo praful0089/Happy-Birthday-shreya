@@ -243,7 +243,13 @@ cake.addEventListener("click",()=>{
         balloons.appendChild(balloon);
 
     }
+   const music = document.getElementById("birthdayMusic");
 
+   music.currentTime = 0;
+
+   music.play().catch(() => {
+       console.log("Music couldn't autoplay.");
+   });
 });
 
 });
