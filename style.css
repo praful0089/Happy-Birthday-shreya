@@ -1,407 +1,180 @@
-/* =========================================
-   Happy Birthday Shreya ❤️
-   Part 1 - Magical Welcome
-========================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    overflow:hidden;
-    height:100vh;
-    background:linear-gradient(180deg,#08021f,#17043a,#34125e);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-}
-
-/* Background */
-
-#background{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    z-index:-1;
-}
-
-/* Stars */
-
-#stars{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-image:
-        radial-gradient(white 1px,transparent 1px),
-        radial-gradient(#ffe97d 1px,transparent 1px);
-
-    background-size:80px 80px,140px 140px;
-
-    animation:twinkle 6s infinite;
-}
-
-@keyframes twinkle{
-
-    0%{
-        opacity:.5;
-    }
-
-    50%{
-        opacity:1;
-    }
-
-    100%{
-        opacity:.5;
-    }
-
-}
-
-/* Moon */
-
-#moon{
-
-    position:absolute;
-
-    top:50px;
-
-    right:60px;
-
-    width:120px;
-
-    height:120px;
-
-    border-radius:50%;
-
-    background:#fff8d5;
-
-    box-shadow:
-        0 0 40px #fff7bf,
-        0 0 90px #fff7bf;
-
-}
-
-/* Floating Hearts */
-
-#hearts{
-
-    position:absolute;
-
-    width:100%;
-
-    height:100%;
-
-}
-
-/* Welcome Screen */
-
-#welcome{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.card{
-
-    width:90%;
-
-    max-width:420px;
-
-    padding:35px;
-
-    text-align:center;
-
-    border-radius:25px;
-
-    background:rgba(255,255,255,.12);
-
-    backdrop-filter:blur(15px);
-
-    border:1px solid rgba(255,255,255,.2);
-
-    box-shadow:0 10px 35px rgba(0,0,0,.4);
-
-    animation:fadeUp 1.2s ease;
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        transform:translateY(40px);
-
-        opacity:0;
-
-    }
-
-    to{
-
-        transform:translateY(0);
-
-        opacity:1;
-
-    }
-
-}
-
-.card h1{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:58px;
-
-    margin:10px 0;
-
-}
-
-.card h2{
-
-    color:#ffd8f5;
-
-    margin-bottom:20px;
-
-}
-
-.card p{
-
-    line-height:1.7;
-
-    margin-bottom:25px;
-
-}
-
-button{
-
-    border:none;
-
-    padding:15px 35px;
-
-    border-radius:40px;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    color:white;
-
-    background:linear-gradient(45deg,#ff4ea3,#ff84d2);
-
-    transition:.3s;
-
-}
-
-button:hover{
-
-    transform:scale(1.08);
-
-}
-
-/* Mobile */
-
-@media(max-width:600px){
-
-.card{
-
-padding:25px;
-
-}
-
-.card h1{
-
-font-size:44px;
-
-}
-
-#moon{
-
-width:80px;
-
-height:80px;
-
-top:25px;
-
-right:25px;
-
-}
-
-}
 /* ==========================================
-   PART 2 - New Screens
+   Happy Birthday Shreya ❤️
 ========================================== */
 
-.hidden{
+document.addEventListener("DOMContentLoaded", () => {
 
-    display:none;
+    // Elements
+    const stars = document.getElementById("stars");
+    const hearts = document.getElementById("hearts");
 
-}
+    const welcome = document.getElementById("welcome");
+    const moodScreen = document.getElementById("moodScreen");
+    const teddyScreen = document.getElementById("teddyScreen");
+    const giftScreen = document.getElementById("giftScreen");
+    const cakeScreen = document.getElementById("cakeScreen");
 
-#moodScreen,
-#teddyScreen{
+    const startBtn = document.getElementById("startBtn");
+    const happyBtn = document.getElementById("happyBtn");
+    const sadBtn = document.getElementById("sadBtn");
+    const continueGift = document.getElementById("continueGift");
+    const giftBox = document.getElementById("giftBox");
+    const cake = document.getElementById("cake");
 
-    width:100%;
-    height:100vh;
+    // ==========================
+    // Stars
+    // ==========================
 
-    display:flex;
+    for (let i = 0; i < 150; i++) {
 
-    justify-content:center;
+        const star = document.createElement("div");
 
-    align-items:center;
+        star.className = "star";
 
-    position:absolute;
+        star.style.position = "absolute";
+        star.style.width = "2px";
+        star.style.height = "2px";
+        star.style.borderRadius = "50%";
+        star.style.background = "white";
 
-    top:0;
-    left:0;
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
 
-    opacity:0;
+        star.style.animation =
+            "blink " + (2 + Math.random() * 4) + "s infinite";
 
-    visibility:hidden;
+        stars.appendChild(star);
+    }
 
-    transition:all .8s ease;
+    // ==========================
+    // Extra Animations
+    // ==========================
 
-}
+    const style = document.createElement("style");
 
-#moodScreen.show,
-#teddyScreen.show{
+    style.innerHTML = `
+    @keyframes blink{
+        0%,100%{opacity:.2;transform:scale(1);}
+        50%{opacity:1;transform:scale(1.8);}
+    }
 
-    opacity:1;
+    @keyframes floatHeart{
+        from{
+            transform:translateY(0);
+            opacity:1;
+        }
+        to{
+            transform:translateY(-110vh);
+            opacity:0;
+        }
+    }`;
 
-    visibility:visible;
+    document.head.appendChild(style);
 
-}
+    // ==========================
+    // Floating Hearts
+    // ==========================
 
-#moodScreen button,
-#teddyScreen button{
+    function createHeart() {
 
-    width:240px;
+        const heart = document.createElement("div");
 
-    margin:8px auto;
+        const emojis = ["💖", "💕", "💗", "💞", "💝"];
 
-    display:block;
+        heart.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
 
-}
-/* ==========================
-   Gift Screen
-========================== */
+        heart.style.position = "absolute";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-40px";
+        heart.style.fontSize = (20 + Math.random() * 20) + "px";
+        heart.style.animation = "floatHeart 8s linear forwards";
 
-#giftScreen{
+        hearts.appendChild(heart);
 
-    width:100%;
-    height:100vh;
+        setTimeout(() => {
 
-    display:flex;
+            heart.remove();
 
-    justify-content:center;
+        }, 8000);
+    }
 
-    align-items:center;
+    setInterval(createHeart, 500);
 
-    position:absolute;
+    // ==========================
+    // Hide all screens
+    // ==========================
 
-    top:0;
-    left:0;
+    function hideAll() {
 
-    opacity:0;
+        [welcome, moodScreen, teddyScreen, giftScreen, cakeScreen].forEach(screen => {
 
-    visibility:hidden;
+            screen.classList.remove("show");
+            screen.classList.add("hidden");
 
-    transition:all .8s ease;
-
-}
-
-#giftScreen.show{
-
-    opacity:1;
-
-    visibility:visible;
-
-}
-
-#giftBox{
-
-    transition:.4s;
-
-    user-select:none;
-
-}
-
-#giftBox:hover{
-
-    transform:scale(1.15) rotate(-8deg);
-
-}
-/* ==========================
-   Birthday Cake
-========================== */
-
-#cakeScreen{
-
-    width:100%;
-    height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:all .8s ease;
-
-}
-
-#cakeScreen.show{
-
-    opacity:1;
-
-    visibility:visible;
-
-}
-
-#cake{
-
-    transition:.4s;
-
-    user-select:none;
-
-    animation:bounce 2s infinite;
-
-}
-
-#cake:hover{
-
-    transform:scale(1.15);
-
-}
-
-@keyframes bounce{
-
-    0%,100%{
-
-        transform:translateY(0);
+        });
 
     }
 
-    50%{
+    // ==========================
+    // Navigation
+    // ==========================
 
-        transform:translateY(-12px);
+    startBtn.addEventListener("click", () => {
 
-    }
+        hideAll();
 
-}
+        moodScreen.classList.remove("hidden");
+        moodScreen.classList.add("show");
+
+    });
+
+    happyBtn.addEventListener("click", () => {
+
+        hideAll();
+
+        giftScreen.classList.remove("hidden");
+        giftScreen.classList.add("show");
+
+    });
+
+    sadBtn.addEventListener("click", () => {
+
+        hideAll();
+
+        teddyScreen.classList.remove("hidden");
+        teddyScreen.classList.add("show");
+
+    });
+
+    continueGift.addEventListener("click", () => {
+
+        hideAll();
+
+        giftScreen.classList.remove("hidden");
+        giftScreen.classList.add("show");
+
+    });
+
+    giftBox.addEventListener("click", () => {
+
+        hideAll();
+
+        cakeScreen.classList.remove("hidden");
+        cakeScreen.classList.add("show");
+
+    });
+
+    cake.addEventListener("click", () => {
+
+        cake.innerHTML = "🍰";
+
+        setTimeout(() => {
+
+            alert("🎉 Happy Birthday Shreya! ❤️");
+
+        }, 600);
+
+    });
+
+});
