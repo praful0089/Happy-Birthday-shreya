@@ -235,3 +235,57 @@ right:25px;
 }
 
 }
+/* ==========================================
+   PART 2 - New Screens
+========================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+#moodScreen,
+#teddyScreen{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:all .8s ease;
+
+}
+
+#moodScreen.show,
+#teddyScreen.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#moodScreen button,
+#teddyScreen button{
+
+    width:240px;
+
+    margin:8px auto;
+
+    display:block;
+
+}
