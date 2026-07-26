@@ -90,7 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const welcome = document.getElementById("welcome");
 const moodScreen = document.getElementById("moodScreen");
 const teddyScreen = document.getElementById("teddyScreen");
-
+const giftScreen = document.getElementById("giftScreen");
+const giftBox = document.getElementById("giftBox");
 const happyBtn = document.getElementById("happyBtn");
 const sadBtn = document.getElementById("sadBtn");
 const continueGift = document.getElementById("continueGift");
@@ -123,8 +124,20 @@ sadBtn.addEventListener("click", () => {
 // Continue button
 continueGift.addEventListener("click", () => {
 
-    alert("🎁 Now let's open your birthday gift!");
+    teddyScreen.classList.remove("show");
+
+    giftScreen.classList.add("show");
 
 });
+giftBox.addEventListener("click", () => {
 
+    giftBox.innerHTML = "🎉";
+
+    setTimeout(() => {
+
+        alert("🎂 The Birthday Cake is Coming Next!");
+
+    },600);
+
+});
 });
