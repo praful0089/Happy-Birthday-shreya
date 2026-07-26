@@ -213,11 +213,11 @@ cake.addEventListener("click",()=>{
 
         piece.className="confetti";
 
-        piece.style.left=Math.random()*100+"vw";
-        piece.style.background=
-            colors[Math.floor(Math.random()*colors.length)];
-
-        piece.style.animationDelay=(Math.random()*2)+"s";
+        piece.style.left = (Math.random() * 95) + "vw";
+piece.style.top = (-Math.random() * 100) + "px";
+piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+piece.style.animationDelay = (Math.random() * 3) + "s";
+piece.style.transform = `rotate(${Math.random() * 360}deg)`;
 
         confetti.appendChild(piece);
 
@@ -235,10 +235,10 @@ cake.addEventListener("click",()=>{
         balloon.innerHTML=
             emojis[Math.floor(Math.random()*emojis.length)];
 
-        balloon.style.left=Math.random()*100+"vw";
-
-        balloon.style.animationDelay=
-            (Math.random()*3)+"s";
+        balloon.style.left = (Math.random() * 95) + "vw";
+balloon.style.bottom = (-Math.random() * 200) + "px";
+balloon.style.animationDelay = (Math.random() * 5) + "s";
+balloon.style.fontSize = (30 + Math.random() * 30) + "px";
 
         balloons.appendChild(balloon);
 
