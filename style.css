@@ -338,3 +338,70 @@ right:25px;
     transform:scale(1.15) rotate(-8deg);
 
 }
+/* ==========================
+   Birthday Cake
+========================== */
+
+#cakeScreen{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:all .8s ease;
+
+}
+
+#cakeScreen.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#cake{
+
+    transition:.4s;
+
+    user-select:none;
+
+    animation:bounce 2s infinite;
+
+}
+
+#cake:hover{
+
+    transform:scale(1.15);
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
