@@ -492,3 +492,43 @@ opacity:0;
         -84px -84px transparent;
 }
 }
+/* ==========================
+   Birthday Letter
+========================== */
+
+#letter{
+    margin-top:30px;
+    max-width:650px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    text-align:center;
+    animation:fadeLetter 2s ease;
+}
+
+#letter h2{
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+#letter p{
+    margin:12px 0;
+    line-height:1.8;
+}
+
+#letter h3{
+    margin-top:20px;
+    color:#ffb6d9;
+}
+
+@keyframes fadeLetter{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
