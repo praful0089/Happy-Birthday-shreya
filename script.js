@@ -186,13 +186,63 @@ cakeScreen.classList.add("show");
 
 cake.addEventListener("click",()=>{
 
-cake.innerHTML="🍰";
+    // Cut the cake
+    cake.innerHTML="🍰";
 
-setTimeout(()=>{
+    // Show celebration
+    const celebration=document.getElementById("celebration");
+    const confetti=document.getElementById("confetti");
+    const balloons=document.getElementById("balloons");
 
-alert("🎉 Happy Birthday Shreya! ❤️");
+    celebration.classList.remove("hidden");
+    celebration.classList.add("show");
 
-},600);
+    // 🎊 Confetti
+    const colors=[
+        "#ff4ea3",
+        "#ffd700",
+        "#00e5ff",
+        "#7CFC00",
+        "#ff6347",
+        "#ffffff"
+    ];
+
+    for(let i=0;i<150;i++){
+
+        const piece=document.createElement("div");
+
+        piece.className="confetti";
+
+        piece.style.left=Math.random()*100+"vw";
+        piece.style.background=
+            colors[Math.floor(Math.random()*colors.length)];
+
+        piece.style.animationDelay=(Math.random()*2)+"s";
+
+        confetti.appendChild(piece);
+
+    }
+
+    // 🎈 Balloons
+    const emojis=["🎈","🎈","🎈","🎉","💖","🎊"];
+
+    for(let i=0;i<25;i++){
+
+        const balloon=document.createElement("div");
+
+        balloon.className="balloon";
+
+        balloon.innerHTML=
+            emojis[Math.floor(Math.random()*emojis.length)];
+
+        balloon.style.left=Math.random()*100+"vw";
+
+        balloon.style.animationDelay=
+            (Math.random()*3)+"s";
+
+        balloons.appendChild(balloon);
+
+    }
 
 });
 
