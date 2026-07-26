@@ -438,3 +438,57 @@ opacity:0;
 }
 
 }
+/* ==========================
+   Fireworks
+========================== */
+
+#fireworks{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+}
+
+.firework{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    animation:explode 1.8s ease-out forwards;
+}
+
+@keyframes explode{
+
+0%{
+    transform:scale(.2);
+    opacity:1;
+}
+
+40%{
+    transform:scale(1);
+    opacity:1;
+    box-shadow:
+        0 -60px currentColor,
+        0 60px currentColor,
+        60px 0 currentColor,
+        -60px 0 currentColor,
+        42px 42px currentColor,
+        -42px 42px currentColor,
+        42px -42px currentColor,
+        -42px -42px currentColor;
+}
+
+100%{
+    transform:scale(1.6);
+    opacity:0;
+    box-shadow:
+        0 -120px transparent,
+        0 120px transparent,
+        120px 0 transparent,
+        -120px 0 transparent,
+        84px 84px transparent,
+        -84px 84px transparent,
+        84px -84px transparent,
+        -84px -84px transparent;
+}
+}
