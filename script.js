@@ -92,6 +92,8 @@ const moodScreen = document.getElementById("moodScreen");
 const teddyScreen = document.getElementById("teddyScreen");
 const giftScreen = document.getElementById("giftScreen");
 const giftBox = document.getElementById("giftBox");
+const cakeScreen = document.getElementById("cakeScreen");
+const cake = document.getElementById("cake");
 const happyBtn = document.getElementById("happyBtn");
 const sadBtn = document.getElementById("sadBtn");
 const continueGift = document.getElementById("continueGift");
@@ -124,11 +126,22 @@ continueGift.addEventListener("click", () => {
 });
 giftBox.addEventListener("click", () => {
 
-    giftBox.innerHTML = "🎉";
+    giftScreen.classList.remove("show");
+
+    giftScreen.classList.add("hidden");
+
+    cakeScreen.classList.remove("hidden");
+
+    cakeScreen.classList.add("show");
+
+});
+   cake.addEventListener("click", () => {
+
+    cake.innerHTML = "🍰";
 
     setTimeout(() => {
 
-        alert("🎂 The Birthday Cake is Coming Next!");
+        alert("🎉 Happy Birthday Shreya! ❤️");
 
     },600);
 
