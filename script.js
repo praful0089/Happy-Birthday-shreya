@@ -250,6 +250,15 @@ cake.addEventListener("click",()=>{
    music.play().catch(() => {
        console.log("Music couldn't autoplay.");
    });
+   // 💌 Show birthday letter after 6 seconds
+setTimeout(() => {
+
+    const letter = document.getElementById("letter");
+
+    letter.classList.remove("hidden");
+    letter.classList.add("show");
+
+}, 6000);
 });
 
 });
