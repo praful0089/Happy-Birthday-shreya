@@ -2,73 +2,323 @@
    Happy Birthday Shreya ❤️
 ========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    // Elements
-    const stars = document.getElementById("stars");
-    const hearts = document.getElementById("hearts");
+body{
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    height:100vh;
+    background:linear-gradient(180deg,#08021f,#17043a,#34125e);
+    color:white;
+}
 
-    const welcome = document.getElementById("welcome");
-    const moodScreen = document.getElementById("moodScreen");
-    const teddyScreen = document.getElementById("teddyScreen");
-    const giftScreen = document.getElementById("giftScreen");
-    const cakeScreen = document.getElementById("cakeScreen");
+/* Background */
 
-    const startBtn = document.getElementById("startBtn");
-    const happyBtn = document.getElementById("happyBtn");
-    const sadBtn = document.getElementById("sadBtn");
-    const continueGift = document.getElementById("continueGift");
-    const giftBox = document.getElementById("giftBox");
-    const cake = document.getElementById("cake");
+#background{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+}
 
-    // ==========================
-    // Stars
-    // ==========================
+#stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
 
-    for (let i = 0; i < 150; i++) {
+#hearts{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
 
-        const star = document.createElement("div");
+#moon{
+    position:absolute;
+    top:40px;
+    right:50px;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:#fff7c2;
+    box-shadow:
+        0 0 40px #fff8c5,
+        0 0 80px #fff8c5;
+}
 
-        star.className = "star";
+/* ==========================
+   Screen Layout
+========================== */
 
-        star.style.position = "absolute";
-        star.style.width = "2px";
-        star.style.height = "2px";
-        star.style.borderRadius = "50%";
-        star.style.background = "white";
+section{
+    position:absolute;
+    inset:0;
 
-        star.style.left = Math.random() * 100 + "%";
-        star.style.top = Math.random() * 100 + "%";
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-        star.style.animation =
-            "blink " + (2 + Math.random() * 4) + "s infinite";
+    transition:.8s;
+}
 
-        stars.appendChild(star);
-    }
+.hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
 
-    // ==========================
-    // Extra Animations
-    // ==========================
+.show{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
 
-    const style = document.createElement("style");
+/* ==========================
+   Card
+========================== */
 
-    style.innerHTML = `
-    @keyframes blink{
-        0%,100%{opacity:.2;transform:scale(1);}
-        50%{opacity:1;transform:scale(1.8);}
-    }
+.card{
 
-    @keyframes floatHeart{
-        from{
-            transform:translateY(0);
-            opacity:1;
-        }
-        to{
-            transform:translateY(-110vh);
-            opacity:0;
-        }
-    }`;
+    width:90%;
+    max-width:420px;
 
+    padding:35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 10px 40px rgba(0,0,0,.35);
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.card h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:58px;
+
+margin:10px 0;
+
+}
+
+.card h2{
+
+margin:15px 0;
+
+color:#ffd5ee;
+
+}
+
+.card h3{
+
+color:#ffe77a;
+
+margin-bottom:10px;
+
+}
+
+.card p{
+
+line-height:1.7;
+
+margin:20px 0;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+button{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+cursor:pointer;
+
+color:white;
+
+background:linear-gradient(45deg,#ff4ea3,#ff8fd1);
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+/* ==========================
+   Gift
+========================== */
+
+#giftBox{
+
+font-size:120px;
+
+cursor:pointer;
+
+transition:.4s;
+
+animation:floatGift 2s infinite;
+
+}
+
+#giftBox:hover{
+
+transform:scale(1.15) rotate(-10deg);
+
+}
+
+@keyframes floatGift{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+/* ==========================
+   Cake
+========================== */
+
+#cake{
+
+font-size:150px;
+
+cursor:pointer;
+
+transition:.4s;
+
+animation:bounce 2s infinite;
+
+}
+
+#cake:hover{
+
+transform:scale(1.15);
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:600px){
+
+.card{
+
+width:92%;
+
+padding:25px;
+
+}
+
+.card h1{
+
+font-size:44px;
+
+}
+
+.card h2{
+
+font-size:24px;
+
+}
+
+button{
+
+width:100%;
+
+font-size:17px;
+
+}
+
+#moon{
+
+width:80px;
+height:80px;
+top:20px;
+right:20px;
+
+}
+
+#giftBox{
+
+font-size:100px;
+
+}
+
+#cake{
+
+font-size:120px;
+
+}
+
+}
     document.head.appendChild(style);
 
     // ==========================
