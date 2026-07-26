@@ -329,13 +329,18 @@ font-size:120px;
     inset:0;
 
     display:flex;
-    justify-content:center;
-    align-items:center;
     flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding-top:60px;
 
     pointer-events:none;
 
     z-index:999;
+
 }
 
 #birthdayText{
@@ -346,15 +351,15 @@ font-size:120px;
 
     font-family:'Great Vibes',cursive;
 
-    font-size:42px;
+    font-size:52px;
 
     color:#fff6d5;
 
     text-align:center;
 
-    padding:0 15px;
+    line-height:1.1;
 
-    margin-top:40px;
+    margin-bottom:20px;
 
     text-shadow:
         0 0 15px gold,
@@ -363,19 +368,25 @@ font-size:120px;
 
     animation:glow 2s infinite alternate;
 
-}
+    }
 
 @media(max-width:600px){
 
-    #birthdayText{
+    #celebration{
 
-        font-size:36px;
+    padding-top:90px;
 
-        margin-top:20px;
+}
 
-        padding:0 15px;
+#birthdayText{
 
-    }
+    font-size:42px;
+
+    line-height:1.1;
+
+    margin-bottom:15px;
+
+}
 
 }
 @keyframes glow{
