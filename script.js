@@ -259,6 +259,15 @@ setTimeout(() => {
     letter.classList.add("show");
 
 }, 6000);
+   // 🌟 Show final screen after 20 seconds
+setTimeout(() => {
+
+    const finalScreen = document.getElementById("finalScreen");
+
+    finalScreen.classList.remove("hidden");
+    finalScreen.classList.add("show");
+
+}, 20000);
 });
 
 });
