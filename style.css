@@ -252,7 +252,7 @@ button:hover{
     left:50%;
     transform:translateX(-50%);
     width:100%;
-
+    text-align: centre;
     font-family:'Great Vibes',cursive;
     font-size:52px;
     color:#fff6d5;
@@ -263,7 +263,7 @@ button:hover{
         0 0 30px hotpink,
         0 0 45px deeppink;
 
-    animation:glow 2s infinite alternate;
+    animation:glow 2s ease-in-out infinite alternate;
 
     z-index:10;
 }
@@ -281,13 +281,16 @@ button:hover{
 
 }
 
-@keyframes glow{
+@keyframes glow {
+
     from{
-        transform:scale(1);
+        transform: translateX(-50%) scale(1);
     }
+
     to{
-        transform:scale(1.06);
+        transform: translateX(-50%) scale(1.06);
     }
+
 }
 
 /* ==========================
