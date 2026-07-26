@@ -532,3 +532,13 @@ opacity:0;
         transform:translateY(0);
     }
 }
+#finalScreen{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(5,5,25,.92);
+    z-index:1200;
+    animation:fadeUp 1s ease;
+}
