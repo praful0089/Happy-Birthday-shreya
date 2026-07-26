@@ -105,13 +105,6 @@ startBtn.addEventListener("click", () => {
 
 });
 
-// Happy button
-happyBtn.addEventListener("click", () => {
-
-    alert("🎁 Gift Box scene coming next!");
-
-});
-
 // Sad button
 sadBtn.addEventListener("click", () => {
 
