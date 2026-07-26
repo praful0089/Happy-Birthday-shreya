@@ -16,7 +16,9 @@ body{
     color:white;
 }
 
-/* Background */
+/* ==========================
+   Background
+========================== */
 
 #background{
     position:fixed;
@@ -58,11 +60,9 @@ body{
 section{
     position:absolute;
     inset:0;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     transition:.8s;
 }
 
@@ -83,78 +83,48 @@ section{
 ========================== */
 
 .card{
-
     width:90%;
     max-width:420px;
-
     padding:35px;
-
     border-radius:25px;
-
     text-align:center;
-
     background:rgba(255,255,255,.12);
-
     backdrop-filter:blur(16px);
-
     border:1px solid rgba(255,255,255,.25);
-
     box-shadow:0 10px 40px rgba(0,0,0,.35);
-
     animation:fadeUp .8s ease;
-
 }
 
 @keyframes fadeUp{
-
-from{
-
-opacity:0;
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .card h1{
-
-font-family:'Great Vibes',cursive;
-
-font-size:58px;
-
-margin:10px 0;
-
+    font-family:'Great Vibes',cursive;
+    font-size:58px;
+    margin:10px 0;
 }
 
 .card h2{
-
-margin:15px 0;
-
-color:#ffd5ee;
-
+    margin:15px 0;
+    color:#ffd5ee;
 }
 
 .card h3{
-
-color:#ffe77a;
-
-margin-bottom:10px;
-
+    color:#ffe77a;
+    margin-bottom:10px;
 }
 
 .card p{
-
-line-height:1.7;
-
-margin:20px 0;
-
+    line-height:1.7;
+    margin:20px 0;
 }
 
 /* ==========================
@@ -162,29 +132,18 @@ margin:20px 0;
 ========================== */
 
 button{
-
-padding:15px 35px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:18px;
-
-cursor:pointer;
-
-color:white;
-
-background:linear-gradient(45deg,#ff4ea3,#ff8fd1);
-
-transition:.3s;
-
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(45deg,#ff4ea3,#ff8fd1);
+    transition:.3s;
 }
 
 button:hover{
-
-transform:scale(1.08);
-
+    transform:scale(1.08);
 }
 
 /* ==========================
@@ -192,37 +151,23 @@ transform:scale(1.08);
 ========================== */
 
 #giftBox{
-
-font-size:120px;
-
-cursor:pointer;
-
-transition:.4s;
-
-animation:floatGift 2s infinite;
-
+    font-size:120px;
+    cursor:pointer;
+    transition:.4s;
+    animation:floatGift 2s infinite;
 }
 
 #giftBox:hover{
-
-transform:scale(1.15) rotate(-10deg);
-
+    transform:scale(1.15) rotate(-10deg);
 }
 
 @keyframes floatGift{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
 }
 
 /* ==========================
@@ -230,37 +175,23 @@ transform:translateY(-10px);
 ========================== */
 
 #cake{
-
-font-size:150px;
-
-cursor:pointer;
-
-transition:.4s;
-
-animation:bounce 2s infinite;
-
+    font-size:150px;
+    cursor:pointer;
+    transition:.4s;
+    animation:bounce 2s infinite;
 }
 
 #cake:hover{
-
-transform:scale(1.15);
-
+    transform:scale(1.15);
 }
 
 @keyframes bounce{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
 }
 
 /* ==========================
@@ -269,210 +200,156 @@ transform:translateY(-12px);
 
 @media(max-width:600px){
 
-.card{
+    .card{
+        width:92%;
+        padding:25px;
+    }
 
-width:92%;
+    .card h1{
+        font-size:44px;
+    }
 
-padding:25px;
+    .card h2{
+        font-size:24px;
+    }
 
-}
+    button{
+        width:100%;
+        font-size:17px;
+    }
 
-.card h1{
+    #moon{
+        width:80px;
+        height:80px;
+        top:20px;
+        right:20px;
+    }
 
-font-size:44px;
+    #giftBox{
+        font-size:100px;
+    }
 
-}
-
-.card h2{
-
-font-size:24px;
-
-}
-
-button{
-
-width:100%;
-
-font-size:17px;
-
-}
-
-#moon{
-
-width:80px;
-height:80px;
-top:20px;
-right:20px;
-
-}
-
-#giftBox{
-
-font-size:100px;
-
-}
-
-#cake{
-
-font-size:120px;
-
-}
-
+    #cake{
+        font-size:120px;
+    }
 }
 /* ==========================
    Celebration
 ========================== */
 
 #celebration{
-
     position:fixed;
     inset:0;
-
     display:flex;
     flex-direction:column;
-
     justify-content:flex-start;
-
     align-items:center;
-
     padding-top:60px;
-
-    pointer-events:none;
-
+    overflow:hidden;
     z-index:999;
-
 }
 
 #birthdayText{
-
     font-family:'Great Vibes',cursive;
-
-    #birthdayText{
-
-    font-family:'Great Vibes',cursive;
-
     font-size:52px;
-
     color:#fff6d5;
-
     text-align:center;
-
-    line-height:1.1;
-
-    margin-bottom:20px;
-
+    line-height:1.15;
+    margin-bottom:25px;
     text-shadow:
         0 0 15px gold,
         0 0 30px hotpink,
         0 0 45px deeppink;
-
-    animation:glow 2s infinite alternate;
-
-    }
+    animation:glow 2s ease-in-out infinite alternate;
+    z-index:20;
+}
 
 @media(max-width:600px){
 
     #celebration{
+        padding-top:85px;
+    }
 
-    padding-top:90px;
-
-}
-
-#birthdayText{
-
-    font-size:42px;
-
-    line-height:1.1;
-
-    margin-bottom:15px;
+    #birthdayText{
+        font-size:40px;
+        margin-bottom:18px;
+    }
 
 }
 
-}
 @keyframes glow{
-
-from{
-
-transform:scale(1);
-
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.06);
+    }
 }
 
-to{
+/* ==========================
+   Confetti
+========================== */
 
-transform:scale(1.08);
-
-}
-
-}
-
-#confetti,
-#balloons{
-
+#confetti{
     position:absolute;
     inset:0;
-
     overflow:hidden;
-
+    pointer-events:none;
+    z-index:5;
 }
 
 .confetti{
-
     position:absolute;
-
     width:10px;
     height:18px;
-
     border-radius:3px;
-
     animation:confettiFall 4s linear forwards;
-
 }
 
 @keyframes confettiFall{
+    0%{
+        transform:translateY(-100px) rotate(0deg);
+        opacity:1;
+    }
 
-0%{
-
-transform:translateY(-100px) rotate(0deg);
-
+    100%{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
 }
 
-100%{
+/* ==========================
+   Balloons
+========================== */
 
-transform:translateY(110vh) rotate(720deg);
-
-}
-
+#balloons{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:4;
 }
 
 .balloon{
-
     position:absolute;
-
     font-size:40px;
-
     animation:balloonUp 8s linear forwards;
-
 }
 
 @keyframes balloonUp{
 
-0%{
+    0%{
+        transform:translateY(100vh);
+        opacity:1;
+    }
 
-transform:translateY(100vh);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(-120vh);
-
-opacity:0;
+    100%{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
 
 }
 
-}
 /* ==========================
    Fireworks
 ========================== */
@@ -481,7 +358,8 @@ opacity:0;
     position:absolute;
     inset:0;
     overflow:hidden;
-    z-index:0;
+    pointer-events:none;
+    z-index:3;
 }
 
 .firework{
@@ -494,39 +372,40 @@ opacity:0;
 
 @keyframes explode{
 
-0%{
-    transform:scale(.2);
-    opacity:1;
-}
+    0%{
+        transform:scale(.2);
+        opacity:1;
+    }
 
-40%{
-    transform:scale(1);
-    opacity:1;
-    box-shadow:
-        0 -60px currentColor,
-        0 60px currentColor,
-        60px 0 currentColor,
-        -60px 0 currentColor,
-        42px 42px currentColor,
-        -42px 42px currentColor,
-        42px -42px currentColor,
-        -42px -42px currentColor;
-}
+    40%{
+        transform:scale(1);
+        opacity:1;
+        box-shadow:
+            0 -60px currentColor,
+            0 60px currentColor,
+            60px 0 currentColor,
+            -60px 0 currentColor,
+            42px 42px currentColor,
+            -42px 42px currentColor,
+            42px -42px currentColor,
+            -42px -42px currentColor;
+    }
 
-100%{
-    transform:scale(1.6);
-    opacity:0;
-    box-shadow:
-        0 -120px transparent,
-        0 120px transparent,
-        120px 0 transparent,
-        -120px 0 transparent,
-        84px 84px transparent,
-        -84px 84px transparent,
-        84px -84px transparent,
-        -84px -84px transparent;
-}
-}
+    100%{
+        transform:scale(1.6);
+        opacity:0;
+        box-shadow:
+            0 -120px transparent,
+            0 120px transparent,
+            120px 0 transparent,
+            -120px 0 transparent,
+            84px 84px transparent,
+            -84px 84px transparent,
+            84px -84px transparent,
+            -84px -84px transparent;
+    }
+
+   }
 /* ==========================
    Birthday Letter
 ========================== */
@@ -534,12 +413,14 @@ opacity:0;
 #letter{
     margin-top:30px;
     max-width:650px;
+    width:90%;
     padding:30px;
     border-radius:20px;
     background:rgba(255,255,255,.12);
     backdrop-filter:blur(15px);
     text-align:center;
-    animation:fadeLetter 2s ease;
+    animation:fadeLetter 1.5s ease;
+    z-index:25;
 }
 
 #letter h2{
@@ -550,6 +431,7 @@ opacity:0;
 #letter p{
     margin:12px 0;
     line-height:1.8;
+    font-size:17px;
 }
 
 #letter h3{
@@ -557,16 +439,39 @@ opacity:0;
     color:#ffb6d9;
 }
 
+@media(max-width:600px){
+
+    #letter{
+        width:92%;
+        padding:22px;
+        margin-top:20px;
+    }
+
+    #letter p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+}
+
 @keyframes fadeLetter{
+
     from{
         opacity:0;
         transform:translateY(40px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
+
 }
+
+/* ==========================
+   Final Screen
+========================== */
+
 #finalScreen{
     position:fixed;
     inset:0;
@@ -577,6 +482,85 @@ opacity:0;
     z-index:1200;
     animation:fadeUp 1s ease;
 }
-<button onclick="location.reload()">
-    🔄 Replay the Surprise
-</button>
+
+#finalScreen .card{
+    max-width:500px;
+}
+
+#finalScreen h2{
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+#finalScreen p{
+    margin-bottom:25px;
+}
+
+#finalScreen button{
+    margin-top:10px;
+}
+
+@media(max-width:600px){
+
+    #finalScreen .card{
+        width:92%;
+        padding:25px;
+    }
+
+}
+
+/* ==========================
+   Stars (generated in JS)
+========================== */
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.3;
+        transform:scale(1);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.6);
+    }
+
+}
+
+/* ==========================
+   Floating Hearts
+========================== */
+
+.heart{
+    position:absolute;
+    color:#ff6aa9;
+    font-size:20px;
+    animation:heartFloat linear forwards;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:translateY(100vh) scale(.8);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.4);
+        opacity:0;
+    }
+
+}
