@@ -1,149 +1,190 @@
 /* ==========================================
    Happy Birthday Shreya ❤️
-   Part 1 - Magical Welcome
 ========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const stars = document.getElementById("stars");
-    const hearts = document.getElementById("hearts");
-    const startBtn = document.getElementById("startBtn");
+const stars=document.getElementById("stars");
+const hearts=document.getElementById("hearts");
 
-    // ⭐ Create Twinkling Stars
-    for (let i = 0; i < 150; i++) {
+const welcome=document.getElementById("welcome");
+const moodScreen=document.getElementById("moodScreen");
+const teddyScreen=document.getElementById("teddyScreen");
+const giftScreen=document.getElementById("giftScreen");
+const cakeScreen=document.getElementById("cakeScreen");
 
-        const star = document.createElement("div");
+const startBtn=document.getElementById("startBtn");
+const happyBtn=document.getElementById("happyBtn");
+const sadBtn=document.getElementById("sadBtn");
+const continueGift=document.getElementById("continueGift");
 
-        star.className = "star";
+const giftBox=document.getElementById("giftBox");
+const cake=document.getElementById("cake");
 
-        star.style.position = "absolute";
-        star.style.width = "2px";
-        star.style.height = "2px";
-        star.style.background = "white";
-        star.style.borderRadius = "50%";
 
-        star.style.left = Math.random() * 100 + "%";
-        star.style.top = Math.random() * 100 + "%";
+// ⭐ Stars
+for(let i=0;i<150;i++){
 
-        star.style.animation = "blink " + (2 + Math.random() * 4) + "s infinite";
+    const star=document.createElement("div");
 
-        stars.appendChild(star);
-    }
+    star.className="star";
 
-    // Add blink animation
-    const style = document.createElement("style");
+    star.style.position="absolute";
+    star.style.width="2px";
+    star.style.height="2px";
+    star.style.background="white";
+    star.style.borderRadius="50%";
 
-    style.innerHTML = `
-        @keyframes blink{
-            0%,100%{
-                opacity:.2;
-                transform:scale(1);
-            }
-            50%{
-                opacity:1;
-                transform:scale(1.8);
-            }
-        }
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
 
-        @keyframes floatHeart{
-            from{
-                transform:translateY(0);
-                opacity:1;
-            }
-            to{
-                transform:translateY(-110vh);
-                opacity:0;
-            }
-        }
-    `;
+    star.style.animation="blink "+(2+Math.random()*4)+"s infinite";
 
-    document.head.appendChild(style);
+    stars.appendChild(star);
 
-    // 💖 Floating Hearts
-    function createHeart(){
+}
 
-        const heart = document.createElement("div");
 
-        heart.innerHTML =
-            ["💖","💕","💗","💞","💝"][Math.floor(Math.random()*5)];
+// Animation CSS
+const style=document.createElement("style");
 
-        heart.style.position = "absolute";
-        heart.style.left = Math.random()*100 + "vw";
-        heart.style.bottom = "-40px";
-        heart.style.fontSize = (20 + Math.random()*20) + "px";
-        heart.style.animation = "floatHeart 8s linear forwards";
+style.innerHTML=`
 
-        hearts.appendChild(heart);
+@keyframes blink{
 
-        setTimeout(()=>{
-            heart.remove();
-        },8000);
+0%,100%{
+opacity:.2;
+transform:scale(1);
+}
 
-    }
+50%{
+opacity:1;
+transform:scale(1.8);
+}
 
-    setInterval(createHeart,500);
+}
 
-    // ==============================
-// Part 2 Navigation
-// ==============================
+@keyframes floatHeart{
 
-const welcome = document.getElementById("welcome");
-const moodScreen = document.getElementById("moodScreen");
-const teddyScreen = document.getElementById("teddyScreen");
-const giftScreen = document.getElementById("giftScreen");
-const giftBox = document.getElementById("giftBox");
-const cakeScreen = document.getElementById("cakeScreen");
-const cake = document.getElementById("cake");
-const happyBtn = document.getElementById("happyBtn");
-const sadBtn = document.getElementById("sadBtn");
-const continueGift = document.getElementById("continueGift");
+from{
 
-// Start button
-startBtn.addEventListener("click", () => {
+transform:translateY(0);
+opacity:1;
 
-    welcome.style.display = "none";
+}
 
-    moodScreen.classList.add("show");
+to{
+
+transform:translateY(-110vh);
+opacity:0;
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+
+// Floating Hearts
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.innerHTML=["💖","💕","💗","💞","💝"][Math.floor(Math.random()*5)];
+
+heart.style.position="absolute";
+heart.style.left=Math.random()*100+"vw";
+heart.style.bottom="-40px";
+heart.style.fontSize=(20+Math.random()*20)+"px";
+heart.style.animation="floatHeart 8s linear forwards";
+
+hearts.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+}
+
+setInterval(createHeart,500);
+
+
+// ===============================
+// Navigation
+// ===============================
+
+// Start
+
+startBtn.addEventListener("click",()=>{
+
+welcome.style.display="none";
+
+moodScreen.classList.add("show");
+
+});
+
+
+// Happy
+
+happyBtn.addEventListener("click",()=>{
+
+moodScreen.classList.remove("show");
+
+giftScreen.classList.add("show");
 
 });
 
-// Sad button
-sadBtn.addEventListener("click", () => {
 
-    moodScreen.classList.remove("show");
+// Sad
 
-    teddyScreen.classList.add("show");
+sadBtn.addEventListener("click",()=>{
+
+moodScreen.classList.remove("show");
+
+teddyScreen.classList.add("show");
+
+});
+
+
+// Teddy Continue
+
+continueGift.addEventListener("click",()=>{
+
+teddyScreen.classList.remove("show");
+
+giftScreen.classList.add("show");
 
 });
 
-// Continue button
-continueGift.addEventListener("click", () => {
 
-    teddyScreen.classList.remove("show");
+// Gift
 
-    giftScreen.classList.add("show");
+giftBox.addEventListener("click",()=>{
 
-});
-giftBox.addEventListener("click", () => {
+giftScreen.classList.remove("show");
 
-    giftScreen.classList.remove("show");
-
-    giftScreen.classList.add("hidden");
-
-    cakeScreen.classList.remove("hidden");
-
-    cakeScreen.classList.add("show");
+cakeScreen.classList.add("show");
 
 });
-   cake.addEventListener("click", () => {
 
-    cake.innerHTML = "🍰";
 
-    setTimeout(() => {
+// Cake
 
-        alert("🎉 Happy Birthday Shreya! ❤️");
+cake.addEventListener("click",()=>{
 
-    },600);
+cake.innerHTML="🍰";
+
+setTimeout(()=>{
+
+alert("🎉 Happy Birthday Shreya! ❤️");
+
+},600);
 
 });
+
 });
