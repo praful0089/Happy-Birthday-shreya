@@ -83,30 +83,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(createHeart,500);
 
-    // 🎁 Button
-    startBtn.addEventListener("click",()=>{
+    // ==============================
+// Part 2 Navigation
+// ==============================
 
-        startBtn.innerHTML="Loading Magic... ✨";
+const welcome = document.getElementById("welcome");
+const moodScreen = document.getElementById("moodScreen");
+const teddyScreen = document.getElementById("teddyScreen");
 
-        setTimeout(()=>{
+const happyBtn = document.getElementById("happyBtn");
+const sadBtn = document.getElementById("sadBtn");
+const continueGift = document.getElementById("continueGift");
 
-            alert(
-`✨ Welcome Shreya ❤️
+// Start button
+startBtn.addEventListener("click", () => {
 
-Your magical birthday journey is about to begin!
+    welcome.style.display = "none";
 
-In Part 2 we'll add:
+    moodScreen.classList.add("show");
 
-🎁 Gift Box
-😊 Mood Check
-🥺 Teddy Scene
-🎂 Cake Cutting`
-            );
+});
 
-            startBtn.innerHTML="Start the Journey 🎁";
+// Happy button
+happyBtn.addEventListener("click", () => {
 
-        },1000);
+    alert("🎁 Gift Box scene coming next!");
 
-    });
+});
+
+// Sad button
+sadBtn.addEventListener("click", () => {
+
+    moodScreen.classList.remove("show");
+
+    teddyScreen.classList.add("show");
+
+});
+
+// Continue button
+continueGift.addEventListener("click", () => {
+
+    alert("🎁 Now let's open your birthday gift!");
+
+});
 
 });
