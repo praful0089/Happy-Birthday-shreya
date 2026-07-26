@@ -134,8 +134,10 @@ moodScreen.classList.add("show");
 
 happyBtn.addEventListener("click",()=>{
 
-moodScreen.classList.remove("hidden");
+moodScreen.classList.remove("show");
+moodScreen.classList.add("hidden");
 
+giftScreen.classList.remove("hidden");
 giftScreen.classList.add("show");
 
 });
@@ -145,8 +147,10 @@ giftScreen.classList.add("show");
 
 sadBtn.addEventListener("click",()=>{
 
-moodScreen.classList.remove("hidden");
+moodScreen.classList.remove("show");
+moodScreen.classList.add("hidden");
 
+teddyScreen.classList.remove("hidden");
 teddyScreen.classList.add("show");
 
 });
@@ -156,8 +160,10 @@ teddyScreen.classList.add("show");
 
 continueGift.addEventListener("click",()=>{
 
-teddyScreen.classList.remove("hidden");
+teddyScreen.classList.remove("show");
+teddyScreen.classList.add("hidden");
 
+giftScreen.classList.remove("hidden");
 giftScreen.classList.add("show");
 
 });
@@ -167,8 +173,10 @@ giftScreen.classList.add("show");
 
 giftBox.addEventListener("click",()=>{
 
-giftScreen.classList.remove("hidden");
+giftScreen.classList.remove("show");
+giftScreen.classList.add("hidden");
 
+cakeScreen.classList.remove("hidden");
 cakeScreen.classList.add("show");
 
 });
